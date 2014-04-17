@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How To Use ValidateForm5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--引用ValidateForm5样式-->
+    <link rel="stylesheet" href="./css/validateForm5.css">
+  </head>
+  <body>
+    <!--演示表单-->
+    <form id="testFrom">
+      <table>
+        <tr>
+          <td>用户名：</td>
+          <td>
+            <!--必填，需要正则验证-->
+            <input type="text"  pattern="^[1-9a-zA-Z]{6,20}$" required>
+          </td>
+        </tr>
+        <tr>
+          <td>密码：</td>
+          <td>
+            <!--必填，需要正则验证，两次输入密码必须一致-->
+            <input type="password"  pattern="^[1-9a-zA-Z]{6,20}$" data-group="pw" required>
+          </td>
+        </tr>
+        <tr>
+          <td>重复密码：</td>
+          <td>
+            <!--必填，需要正则验证，两次输入密码必须一致-->
+            <input type="password"  pattern="^[1-9a-zA-Z]{6,20}$" data-group="pw" required>
+          </td>
+        </tr>
+        <tr>
+          <td>邮箱：</td>
+          <td>
+            <!--非必填，但填写后需要正则验证-->
+            <input type="text"  pattern="^[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?$">
+          </td>
+        </tr>
+        <tr>
+          <td>使用协议：</td>
+          <td>
+            <!--必选-->
+            <input type="checkbox" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" value="注册" id="registerBtn" >
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+    
+    <!--引用jquery-->
+    <script src="./js/jquery-1.8.2.min.js"></script>
+    <!--引用ValidateForm5脚本-->
+    <script src="./js/validateForm5-1.0.js"></script>
+    <script>
+      $("#registerBtn").click(function(){
+        //验证表单
+        //通过jquery选择器选择需要验证的表单元素，直接调用validateForm5方法即可
+        //本例意为：验证id为testFrom的元素下，所有input或textarea元素
+        //验证通过返回true；验证不通过返回false，并且高亮所有不通过的元素
+        if($("#testFrom").find("input,textarea").validateForm5()){
+          alert("表单验证通过！");
+          //do something...
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -32,8 +32,11 @@ JS：
 ####示例：  
   
 对应输入类型的input标签而言，是必填含义。  
+  
     <input type="text" required>  
+  
 对于选择类型的input标签而言，是必选的含义。  
+  
     <input type="checkbox" required>  
   
 ###pattern  
@@ -51,8 +54,11 @@ JS：
 ####示例：  
   
 `pattern`与`required`一起使用，使得该元素即不能为空，也要符合表达式。  
-    <input type="text"  pattern="^[1-9a-zA-Z]{6,20}$" required>。  
+  
+    <input type="text"  pattern="^[1-9a-zA-Z]{6,20}$" required>。 
+   
 只有`pattern`属性，说明该元素可以不填，但填写内容之后，必须符合表达式。  
+  
     <input type="email"  pattern="^[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?$">  
   
 ###data-group  

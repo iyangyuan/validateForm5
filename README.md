@@ -71,8 +71,9 @@ JS：
 ####示例：  
   
 两个元素均标识为pw组，保证内容一致。  
-    <input type="password"  pattern="^\[1\-9a\-zA\-Z\]\{6,20\}$" data\-group="pw" required>  
-    <input type="password"  pattern="^\[1\-9a\-zA\-Z\]\{6,20\}$" data\-group="pw" required>  
+  
+    <input type="password"  pattern="^[1-9a-zA-Z]{6,20}$" data-group="pw" required>  
+    <input type="password"  pattern="^[1-9a-zA-Z]{6,20}$" data-group="pw" required>  
    
    
    

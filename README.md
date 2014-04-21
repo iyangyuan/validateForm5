@@ -5,8 +5,35 @@ JS：
 -------------  
   
 ###语法：  
-  
-    $("#testFrom").find("input,textarea").validateForm5();  
+    
+    //通过jquery选择器选择需要验证的表单元素，直接调用validateForm5方法即可
+    //本例意为：验证id为testFrom的元素下，所有input或textarea元素
+    //验证通过返回true；验证不通过返回false，并且高亮所有不通过的元素
+    if($("#testFrom").find("input,textarea").validateForm5()){
+      alert("表单验证通过！");
+      //do something...
+    }
+    
+您也可以指定错误提示的内容：  
+    
+    if($("#testFrom").find("input,textarea").validateForm5({
+    	//必要
+      "required":{
+        //必要-必填
+        "needValue": "此项不可以为空",
+        //必要-必选
+        "needCheck": "此项必选"
+      },
+      //格式
+      "pattern":"格式不正确",
+      //一致性
+      "group":"两次密码输入不一致"
+    })){
+      alert("表单验证通过！");
+      //do something...
+    }
+    
+    请您确保只修改值，务必保持文档结构不变(请勿修改name)。  
     
 说明：  
   
